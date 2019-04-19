@@ -1,0 +1,22 @@
+package quill
+
+import com.typesafe.config.Config
+import io.getquill._
+
+object Store {
+  def apply(conf: Config): Store = new Store(conf)
+}
+
+class Store(conf: Config) {
+  implicit val ctx = new H2JdbcContext(SnakeCase, conf.getConfig("quill.ctx"))
+  import ctx._
+
+  def addTodo(todo: Todo): Int = run( query[Todo].insert(lift(todo)).returning(_.id) )
+
+  def updateTodo(todo: Todo): Unit = {
+    run( query[Todo].filter(_.id == lift(todo.id)).update(lift(todo)) )
+    ()
+  }
+
+  def listTodos(): Seq[Todo] = run( query[Todo] )
+}
