@@ -4,7 +4,7 @@ Quill
 
 Note
 ----
->See Store.scala via VSCode, Metals and Bloop for 3 Quill query errors.
+>See Store.scala via VSCode, Metals and Bloop for 3 Quill queries - but they're not errors. Strange.
 
 Test
 ----
