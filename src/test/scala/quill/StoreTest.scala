@@ -9,8 +9,14 @@ class StoreTest extends FunSuite {
   test("store") {
     val store = Store(conf)
     val todo = Todo(task = "wash car")
-    assert( store.addTodo(todo) > 0 )
-    store.updateTodo(todo.copy(task = "wash and dry car"))
-    assert( store.listTodos().nonEmpty )
+    val id = store.addTodo(todo)
+    println(s"*** Id = $id")
+    assert( id > 0 )
+    val todoWithId = todo.copy(id = id)
+    println(s"*** Todo = $todoWithId")
+    store.updateTodo(todoWithId.copy(task = "wash and dry car"))
+    val todos = store.listTodos()
+    println(s"*** Todos = ${todos.toString}")
+    assert( todos.nonEmpty )
   }
 }
