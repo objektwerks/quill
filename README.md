@@ -1,6 +1,6 @@
 Quill
 -----
->Quill feature tests. **WARNING** Any Quill version beyond 3.0.1 breaks the unit test.
+>Quill basic feature tests.
 
 Test
 ----
