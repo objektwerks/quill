@@ -1,7 +1,7 @@
 name := "quill"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.12.10"
+scalaVersion := "2.13.1"
 libraryDependencies ++= {
   val quillVersion = "3.5.0"
   Seq(
