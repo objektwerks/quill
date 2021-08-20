@@ -3,7 +3,7 @@ organization := "objektwerks"
 version := "0.1-SNAPSHOT"
 scalaVersion := "2.13.6"
 libraryDependencies ++= {
-  val quillVersion = "3.8.0"
+  val quillVersion = "3.9.0"
   Seq(
     "io.getquill" %% "quill-sql" % quillVersion % Test,
     "io.getquill" %% "quill-jdbc" % quillVersion % Test,
