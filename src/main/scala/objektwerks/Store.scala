@@ -1,4 +1,4 @@
-package quill
+package objektwerks
 
 import com.typesafe.config.Config
 import io.getquill._
