@@ -1,13 +1,17 @@
 package objektwerks
 
+import com.typesafe.config.ConfigFactory
 import com.typesafe.scalalogging.LazyLogging
 
 import java.util.concurrent.TimeUnit
 
 import org.openjdk.jmh.annotations._
+import scala.util.Random
 
 object Peformance extends LazyLogging {
-  logger.info("Database and Repository initialized for performance testing.")
+  val conf = ConfigFactory.load("app.conf")
+  val store = Store(conf)
+  logger.info("Database and Store initialized for performance testing.")
 }
 
 @State(Scope.Thread)
@@ -17,5 +21,11 @@ object Peformance extends LazyLogging {
 @Measurement(iterations = 10)
 @Fork(1)
 class Performance() {
+  import Peformance.store
 
+  @Benchmark
+  def addTodo(): Int = store.addTodo( Todo( id = Random.nextInt(), task = "todo" ) )
+
+  @Benchmark
+  def listTodos(): Seq[Todo] = store.listTodos()
 }
