@@ -24,7 +24,7 @@ class Performance() {
   import Peformance.store
 
   @Benchmark
-  def addTodo(): Int = store.addTodo( Todo( id = Random.nextInt(), task = "todo" ) )
+  def addTodo(): Int = store.addTodo( Todo( id = Math.abs(Random.nextInt()), task = "todo" ) )
 
   @Benchmark
   def listTodos(): Seq[Todo] = store.listTodos()
