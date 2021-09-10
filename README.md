@@ -1,6 +1,6 @@
 Quill
 -----
->Quill feature tests.
+>Quill feature tests and performance benchmark.
 
 Test
 ----
