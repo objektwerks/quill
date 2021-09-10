@@ -6,7 +6,6 @@ import com.typesafe.scalalogging.LazyLogging
 import java.util.concurrent.TimeUnit
 
 import org.openjdk.jmh.annotations._
-import scala.util.Random
 
 object Peformance extends LazyLogging {
   val conf = ConfigFactory.load("app.conf")
@@ -24,7 +23,7 @@ class Performance() {
   import Peformance.store
 
   @Benchmark
-  def addTodo(): Int = store.addTodo( Todo( id = Math.abs(Random.nextInt()), task = "todo" ) )
+  def addTodo(): Int = store.addTodo(Todo(task = "todo"))
 
   @Benchmark
   def listTodos(): Seq[Todo] = store.listTodos()
