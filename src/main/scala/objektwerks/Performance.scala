@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
 
 import org.openjdk.jmh.annotations._
 
-object Peformance extends LazyLogging {
+object Performance extends LazyLogging {
   val conf = ConfigFactory.load("app.conf")
   val store = Store(conf)
   logger.info("Database and Store initialized for performance testing.")
@@ -20,7 +20,7 @@ object Peformance extends LazyLogging {
 @Measurement(iterations = 10)
 @Fork(1)
 class Performance() {
-  import Peformance.store
+  import Performance.store
 
   @Benchmark
   def addTodo(): Int = store.addTodo(Todo(task = "todo"))
