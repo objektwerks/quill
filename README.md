@@ -12,7 +12,7 @@ Benchmark
 
 Results
 -------
->OpenJDK 64-Bit Server VM (Zulu 8.56.0.23-CA-macos-aarch64) (build 25.302-b08, mixed mode)
+>OpenJDK Runtime Environment (Zulu 8.56.0.23-CA-macos-aarch64) (build 1.8.0_302-b08)
 1. addTodo - 21.284
 2. listTodos - 3.375
 3. updateTodo - 6.536
