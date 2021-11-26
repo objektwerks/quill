@@ -5,7 +5,7 @@ organization := "objektwerks"
 version := "0.1-SNAPSHOT"
 scalaVersion := "2.13.7"
 libraryDependencies ++= {
-  val quillVersion = "3.11.0"
+  val quillVersion = "3.10.0" // 3.11 contains dev.zio
   Seq(
     "io.getquill" %% "quill-sql" % quillVersion,
     "io.getquill" %% "quill-jdbc" % quillVersion,
