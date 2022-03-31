@@ -10,7 +10,7 @@ libraryDependencies ++= {
     "io.getquill" %% "quill-sql" % quillVersion,
     "io.getquill" %% "quill-jdbc" % quillVersion,
     "com.h2database" % "h2" % "2.1.210",
-    "com.typesafe" % "config" % "1.4.1",
+    "com.typesafe" % "config" % "1.4.2",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.4",
     "ch.qos.logback" % "logback-classic" % "1.2.10",
     "org.scalatest" %% "scalatest" % "3.2.10" % Test
