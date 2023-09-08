@@ -8,7 +8,7 @@ object Store {
 }
 
 class Store(conf: Config) {
-  implicit val ctx = new H2JdbcContext(SnakeCase, conf.getConfig("quill.ctx"))
+  val ctx = new H2JdbcContext(SnakeCase, conf.getConfig("quill.ctx"))
   import ctx._
 
   def addTodo(todo: Todo): Int = run( query[Todo].insert(lift(todo)).returningGenerated(_.id) )
