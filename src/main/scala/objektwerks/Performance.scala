@@ -16,14 +16,18 @@ import org.openjdk.jmh.annotations._
 class Performance() {
   val conf = ConfigFactory.load("app.conf")
   val store = Store(conf)
-  println("Database and Store initialized for performance testing.")
+  var todo = Todo(0, "")
 
-  var todo = Todo(task = UUID.randomUUID.toString)
-  val id = store.addTodo(todo)
-  todo = todo.copy(id = id)
+  println("*** Database and Store initialized for performance testing.")
 
   @Benchmark
-  def addTodo(): Int = store.addTodo(Todo(task = UUID.randomUUID.toString))
+  def addTodo(): Int = {
+    todo = todo.copy(task = UUID.randomUUID.toString)
+    val id = store.addTodo(todo)
+    todo = todo.copy(id = id)
+    id
+  }
+
 
   @Benchmark
   def updateTodo(): Unit = {
