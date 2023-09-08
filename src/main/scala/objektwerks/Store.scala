@@ -13,9 +13,9 @@ class Store(conf: Config) {
 
   def addTodo(todo: Todo): Int = run( query[Todo].insert(lift(todo)).returningGenerated(_.id) )
 
-  def updateTodo(todo: Todo): Unit = {
+  def updateTodo(todo: Todo): Boolean = {
     run( query[Todo].filter(_.id == lift(todo.id)).update(lift(todo)) )
-    ()
+    true
   }
 
   def listTodos(): Seq[Todo] = run( query[Todo] )
