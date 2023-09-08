@@ -11,7 +11,8 @@ class Store(conf: Config) {
   private val ctx = new H2JdbcContext(SnakeCase, conf.getConfig("quill.ctx"))
   import ctx._
 
-  def addTodo(todo: Todo): Int = run( query[Todo].insert(lift(todo)).returningGenerated(_.id) )
+  def addTodo(todo: Todo): Int =
+    run( query[Todo].insert(lift(todo)).returningGenerated(_.id) )
 
   def updateTodo(todo: Todo): Boolean = {
     run( query[Todo].filter(_.id == lift(todo.id)).update(lift(todo)) )
