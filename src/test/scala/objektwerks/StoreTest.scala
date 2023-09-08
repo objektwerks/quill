@@ -18,8 +18,10 @@ class StoreTest extends AnyFunSuite with Matchers {
 
     val todoWithId = todo.copy(id = id)
     println(s"*** Todo Update: $todoWithId")
-    store.updateTodo(todoWithId.copy(task = "wash and dry car"))
-    
+    val updatedTodo = todoWithId.copy(task = "wash and dry car")
+    val updated = store.updateTodo(updatedTodo)
+    updated shouldBe true
+
     val todos = store.listTodos()
     println(s"*** List Todos: ${todos.toString}")
     todos.length shouldBe 1
