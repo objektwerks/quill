@@ -3,8 +3,9 @@ package objektwerks
 import com.typesafe.config.ConfigFactory
 
 import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class StoreTest extends AnyFunSuite {
+class StoreTest extends AnyFunSuite with Matchers {
   val conf = ConfigFactory.load("test.conf")
 
   test("store") {
@@ -13,7 +14,7 @@ class StoreTest extends AnyFunSuite {
     val todo = Todo(task = "wash car")
     val id = store.addTodo(todo)
     println(s"*** Todo Add: $id")
-    assert( id > 0 )
+    id shouldBe 1
 
     val todoWithId = todo.copy(id = id)
     println(s"*** Todo Update: $todoWithId")
@@ -21,6 +22,6 @@ class StoreTest extends AnyFunSuite {
     
     val todos = store.listTodos()
     println(s"*** List Todos: ${todos.toString}")
-    assert( todos.nonEmpty )
+    todos.length shouldBe 1
   }
 }
