@@ -12,6 +12,8 @@ Benchmark
 1. sbt jmh:run
 >**Warning** Using JDK17, throws: java.lang.ClassNotFoundException: java.sql.ResultSet
 
+>See: [Benchmark compilation fails if java.sql.ResultSet is used #192](https://github.com/sbt/sbt-jmh/issues/192)
+
 Results
 -------
 >OpenJDK Runtime Environment (Zulu 8.56.0.23-CA-macos-aarch64) (build 1.8.0_302-b08)
