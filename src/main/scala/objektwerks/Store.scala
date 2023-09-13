@@ -8,7 +8,7 @@ object Store {
   def apply(config: Config): Store = new Store(config)
 }
 
-class Store(config: Config) {
+final class Store(config: Config) {
   private val ctx = new H2JdbcContext(SnakeCase, config.getConfig("quill.ctx"))
   import ctx._
 
