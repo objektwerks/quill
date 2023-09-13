@@ -1,14 +1,15 @@
 package objektwerks
 
 import com.typesafe.config.Config
+
 import io.getquill._
 
 object Store {
-  def apply(conf: Config): Store = new Store(conf)
+  def apply(config: Config): Store = new Store(config)
 }
 
-class Store(conf: Config) {
-  private val ctx = new H2JdbcContext(SnakeCase, conf.getConfig("quill.ctx"))
+class Store(config: Config) {
+  private val ctx = new H2JdbcContext(SnakeCase, config.getConfig("quill.ctx"))
   import ctx._
 
   def addTodo(todo: Todo): Int =
