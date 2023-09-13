@@ -13,12 +13,10 @@ import org.openjdk.jmh.annotations._
 @Warmup(iterations = 10)
 @Measurement(iterations = 10)
 @Fork(1)
-class Performance() {
+final class Performance() {
   val conf = ConfigFactory.load("app.conf")
   val store = Store(conf)
   var todo = Todo(0, "")
-
-  println("*** Database and Store initialized for performance testing.")
 
   @Benchmark
   def addTodo(): Int = {
