@@ -1,6 +1,6 @@
 Quill
 -----
->Quill feature tests and performance benchmark.
+>Quill feature tests and performance benchmark against H2.
 
 Test
 ----
