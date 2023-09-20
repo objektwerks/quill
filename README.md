@@ -14,7 +14,7 @@ Benchmark
 
 >**See:** [Benchmark compilation fails if java.sql.ResultSet is used #192](https://github.com/sbt/sbt-jmh/issues/192)
 
->**Update:** Using JDK 21 and jmh-46, still throws: java.lang.ClassNotFoundException: javax.sql.ResultSet
+>**Update:** Using JDK 21 and sbt-jmh 46, still throws: java.lang.ClassNotFoundException: javax.sql.ResultSet
 
 Results
 -------
