@@ -7,6 +7,11 @@ import java.util.concurrent.TimeUnit
 
 import org.openjdk.jmh.annotations._
 
+object Performance {
+  val conf = ConfigFactory.load("app.conf")
+  val store = Store(conf)
+}
+
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.AverageTime))
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
@@ -14,8 +19,7 @@ import org.openjdk.jmh.annotations._
 @Measurement(iterations = 10)
 @Fork(1)
 final class Performance() {
-  val conf = ConfigFactory.load("app.conf")
-  val store = Store(conf)
+  import Performance.store
   var todo = Todo(0, "")
 
   @Benchmark
