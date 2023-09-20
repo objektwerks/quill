@@ -14,6 +14,8 @@ Benchmark
 
 >**See:** [Benchmark compilation fails if java.sql.ResultSet is used #192](https://github.com/sbt/sbt-jmh/issues/192)
 
+>**Update:** Using JDK 21, throws: java.lang.ClassNotFoundException: javax.sql.DataSource
+
 Results
 -------
 >OpenJDK Runtime Environment (Zulu 8.56.0.23-CA-macos-aarch64) (build 1.8.0_302-b08)
