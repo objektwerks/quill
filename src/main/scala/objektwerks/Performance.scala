@@ -20,7 +20,7 @@ object Performance {
 @Fork(1)
 final class Performance() {
   import Performance.store
-  var todo = Todo(0, "")
+  var todo = Todo(task = "")
 
   @Benchmark
   def addTodo(): Int = {
