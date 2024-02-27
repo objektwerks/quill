@@ -3,7 +3,7 @@ enablePlugins(JmhPlugin)
 name := "quill"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.13.12"
+scalaVersion := "2.13.13"
 libraryDependencies ++= {
   val quillVersion = "3.10.0" // 3.11 contains dev.zio
   Seq(
