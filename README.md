@@ -19,7 +19,7 @@ Results
 3. updateTodo - 3.648
 >Total time: 604 s (10:04), 10 warmups, 10 iterations, average time in microseconds, completed **2024.3.22**
 
->OpenJDK Runtime Environment Zulu 8.56.0.23-CA-macos-aarch64 (build 1.8.0_302-b08)
+>OpenJDK Runtime Environment Zulu 8.56.0.23-CA-macos-aarch64 (build 1.8.0_302-b08), **Scala 2.13**, Apple M1
 1. addTodo - 21.284
 2. listTodos - 3.375
 3. updateTodo - 6.536
