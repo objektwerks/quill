@@ -20,6 +20,7 @@ object Performance {
 @Fork(1)
 class Performance() {
   import Performance.store
+  
   var todo = Todo(task = "")
 
   @Benchmark
