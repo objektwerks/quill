@@ -9,7 +9,7 @@ libraryDependencies ++= {
   Seq(
     "io.getquill" %% "quill-sql" % quillVersion,
     "io.getquill" %% "quill-jdbc" % quillVersion,
-    "com.h2database" % "h2" % "2.2.224",
+    "com.h2database" % "h2" % "2.3.230",
     "com.typesafe" % "config" % "1.4.3",
     "ch.qos.logback" % "logback-classic" % "1.5.6",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
